@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:17:58 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/16 17:50:50 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:58:38 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,37 @@ void	ft_error(char *msg)
 {
 	ft_putendl_fd(msg, 1);
 	exit(0);
+}
+
+int	get_min(t_list **stack, int val)
+{
+	t_list	*head;
+	int		min;
+
+	head = *stack;
+	min = head->index;
+	while (head->next)
+	{
+		head = head->next;
+		if ((head->index < min) && head->index != val)
+			min = head->index;
+	}
+	return (min);
+}
+
+int	get_distance(t_list **stack, int index)
+{
+	t_list	*head;
+	int		distance;
+
+	distance = 0;
+	head = *stack;
+	while (head)
+	{
+		if (head->index == index)
+			break ;
+		distance++;
+		head = head->next;
+	}
+	return (distance);
 }

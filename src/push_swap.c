@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:50:01 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/16 17:18:53 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:14:07 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ void	init_stack(t_list **stack_a, int argc, char **argv)
 		free(args);
 }
 
+static void	ft_tri(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) <= 5)
+		tri_simple(stack_a, stack_b);
+	else
+		ft_algo(stack_a, stack_b);
+}
 
 int	main(int argc, char **argv)
 {
@@ -53,9 +60,7 @@ int	main(int argc, char **argv)
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv);
 	print_lst(*stack_a);
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	rrr(stack_a, stack_b);
+	ft_tri(stack_a, stack_b);
 	print_lst(*stack_a);
 	print_lst(*stack_b);
 	if (is_sort(stack_a))
