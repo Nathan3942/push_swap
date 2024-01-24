@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:39:31 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/19 15:50:38 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:52:42 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,12 @@ typedef struct s_list
 //algo
 void	ft_algo(t_list **stack_a, t_list **stack_b);
 
+//algo_fin
+void	algo_fin(t_list **stack_a, t_list **stack_b);
+
 //tri_simple
 void	tri_simple(t_list **stack_a, t_list **stack_b);
+void	sort_3(t_list **stack_a);
 
 //swap
 int		swap(t_list **stack);
@@ -74,8 +78,14 @@ void	ft_error(char *msg);
 int		get_min(t_list **stack, int val);
 int		get_distance(t_list **stack, int index);
 
-//utilsbis
+//util_algo
 int		get_pos_index(t_list **stack, int index);
+int		get_index(t_list **stack, int index);
+int		get_max_index(t_list **stack);
 int		abs(int i);
+
+//utils_algo_fin
+int		get_pos_fin(t_list **stack, int index);
+int		get_min_index(t_list **stack);
 
 #endif

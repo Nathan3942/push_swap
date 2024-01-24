@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:22:39 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/18 18:21:03 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:24:47 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	sort_3act(t_list **stack_a, t_list *head, int min)
 	}
 }
 
-static void	sort_3(t_list **stack_a)
+void	sort_3(t_list **stack_a)
 {
 	t_list	*head;
 	int		min;
