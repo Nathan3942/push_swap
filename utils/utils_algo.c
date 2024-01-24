@@ -6,11 +6,49 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:53:46 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 11:16:06 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:49:49 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+static int	get_pos(int index, t_list **stack, char c)
+{
+	int	pos;
+
+	if (c == 'a')
+		pos = get_index(stack, index);
+	else
+		pos = get_pos_index(stack, index);
+	return (pos);
+}
+
+int	nb_op(int index, t_list **stack, int op, char c)
+{
+	int	pos;
+	int	nbop;
+	int	cal;
+
+	nbop = 0;
+	pos = get_pos(index, stack, c);
+	while (pos >= 0 && pos < ft_lstsize(*stack))
+	{
+		if (pos > (ft_lstsize(*stack) / 2))
+		{
+			pos++;
+			cal = 1;
+		}
+		else
+		{
+			pos--;
+			cal = -1;
+		}
+		nbop++;
+	}
+	if (op == 1)
+		return (cal);
+	return (nbop);
+}
 
 int	get_pos_index(t_list **stack, int index)
 {
@@ -81,9 +119,3 @@ int	get_max_index(t_list **stack)
 	return (pos);
 }
 
-int	abs(int i)
-{
-	if (i < 0)
-		i = -i;
-	return (i);
-}

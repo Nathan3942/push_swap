@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:50:01 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/19 14:14:07 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:56:25 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,12 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv);
-	print_lst(*stack_a);
+	// print_lst(*stack_a);
 	ft_tri(stack_a, stack_b);
-	print_lst(*stack_a);
-	print_lst(*stack_b);
+	// print_lst(*stack_a);
 	if (is_sort(stack_a))
 	{
-		ft_putendl_fd("Trié!!", 1);
+		// ft_putendl_fd("Trié!!", 1);
 		free_stack(stack_a);
 		free_stack(stack_b);
 		return (0);

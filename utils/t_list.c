@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:41:28 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/16 12:54:05 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:04:51 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	print_lst(t_list *head)
 	while (tmp)
 	{
 		ft_putnbr_fd(tmp->value, 1);
+		ft_putchar_fd('/', 1);
 		ft_putnbr_fd(tmp->index, 1);
 		ft_putchar_fd(' ', 1);
 		tmp = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:47:09 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 12:17:41 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:47:11 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,11 @@ int	get_min_index(t_list **stack)
 		i++;
 	}
 	return (pos);
+}
+
+int	abs(int i)
+{
+	if (i < 0)
+		i = -i;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:39:31 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 11:52:42 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:44:26 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,11 @@ int		get_distance(t_list **stack, int index);
 int		get_pos_index(t_list **stack, int index);
 int		get_index(t_list **stack, int index);
 int		get_max_index(t_list **stack);
-int		abs(int i);
+int		nb_op(int index, t_list **stack, int op, char c);
 
 //utils_algo_fin
 int		get_pos_fin(t_list **stack, int index);
 int		get_min_index(t_list **stack);
+int		abs(int i);
 
 #endif
