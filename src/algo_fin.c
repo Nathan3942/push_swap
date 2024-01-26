@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:28:14 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 15:55:48 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:22:38 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,21 @@ static void	push_b_to_a(t_list **stack_a, t_list **stack_b)
 	i = 0;
 	while (ft_lstsize(*stack_b) > 0)
 	{
-		// print_lst(*stack_a);
-		// print_lst(*stack_b);
 		head_a = *stack_a;
 		head_b = *stack_b;
-		if (i == 0 && head_a->index == 0)
+		if (i == 0 && (head_a->index == 0
+				|| head_a->index == get_min_index(stack_a, 'i')))
+		{
 			pa(stack_a, stack_b);
-		else if (head_b->index == head_a->index - 1
-			|| head_b->index == get_min(stack_a, -1))
+			i++;
+		}
+		else if (head_b->index == head_a->index - 1)
+		{
 			pa(stack_a, stack_b);
+			i++;
+		}
 		else
 			rra(stack_a);
-		i++;
 	}
 }
 
@@ -60,7 +63,7 @@ static void	put_first_index(t_list **stack_a)
 {
 	int	pos;
 
-	pos = get_min_index(stack_a);
+	pos = get_min_index(stack_a, 'p');
 	while (pos > 0 && pos < ft_lstsize(*stack_a))
 	{
 		if (pos > (ft_lstsize(*stack_a)))
@@ -84,6 +87,4 @@ void	algo_fin(t_list **stack_a, t_list **stack_b)
 	tri_stack_b(stack_b);
 	push_b_to_a(stack_a, stack_b);
 	put_first_index(stack_a);
-	// print_lst(*stack_a);
-	// print_lst(*stack_b);
 }

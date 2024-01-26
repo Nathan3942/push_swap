@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:53:46 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 14:49:49 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:14:25 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,15 @@ int	nb_op(int index, t_list **stack, int op, char c)
 
 	nbop = 0;
 	pos = get_pos(index, stack, c);
-	while (pos >= 0 && pos < ft_lstsize(*stack))
+	if (pos > ft_lstsize(*stack) / 2)
 	{
-		if (pos > (ft_lstsize(*stack) / 2))
-		{
-			pos++;
-			cal = 1;
-		}
-		else
-		{
-			pos--;
-			cal = -1;
-		}
-		nbop++;
+		nbop = ft_lstsize(*stack) - pos;
+		cal = 1;
+	}
+	else
+	{
+		nbop = pos;
+		cal = -1;
 	}
 	if (op == 1)
 		return (cal);
@@ -118,4 +114,3 @@ int	get_max_index(t_list **stack)
 	}
 	return (pos);
 }
-

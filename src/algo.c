@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 16:57:50 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 15:56:04 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/26 17:14:50 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,24 +76,20 @@ static void	cal_op(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 	int		tmp[2];
-	int		cal[2];
 	int		nbop[2];
+	int		cal[2];
 
 	head = *stack_a;
 	tmp[0] = head->index;
 	while (head)
 	{
 		nbop[1] = nb_op(head->index, stack_b, 0, 'b');
-		nbop[0] = nb_op((head->index), stack_a, 0, 'a');
+		nbop[0] = nb_op(head->index, stack_a, 0, 'a');
 		cal[0] = nb_op((head->index), stack_a, 1, 'a');
 		cal[1] = nb_op(head->index, stack_b, 1, 'b');
-		if (cal[0] == cal[1])
-			nbop[0] = abs(nbop[0] - nbop[1]);
-		else
-		nbop[0] = nbop[0] + nbop[1];
-		if (nbop[0] < tmp[1] || tmp[1] == 0)
+		if (nbop[0] + nbop[1] < tmp[1] || tmp[1] == 0)
 		{
-			tmp[1] = nbop[0];
+			tmp[1] = nbop[0] + nbop[1];
 			tmp[0] = head->index;
 		}
 		head = head->next;
@@ -108,11 +104,7 @@ void	ft_algo(t_list **stack_a, t_list **stack_b)
 	while (ft_lstsize(*stack_a) > 3)
 	{
 		cal_op(stack_a, stack_b);
-		// print_lst(*stack_a);
-		// print_lst(*stack_b);
 	}
 	sort_3(stack_a);
-	// print_lst(*stack_a);
-	// print_lst(*stack_b);
 	algo_fin(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:39:31 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 14:44:26 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:15:31 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int		nb_op(int index, t_list **stack, int op, char c);
 
 //utils_algo_fin
 int		get_pos_fin(t_list **stack, int index);
-int		get_min_index(t_list **stack);
+int		get_min_index(t_list **stack, char c);
 int		abs(int i);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:22:39 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/24 11:24:47 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:29:41 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,8 @@ void	sort_3(t_list **stack_a)
 	next_min = get_min(stack_a, min);
 	if (head->index == min && head->next->index != next_min)
 	{
-		ra(stack_a);
-		sa(stack_a);
 		rra(stack_a);
+		sa(stack_a);
 	}
 	else if (head->index == next_min)
 	{
