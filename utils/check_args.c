@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:57:45 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/16 14:42:49 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:11:50 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,23 @@ void	check_args(int argc, char **argv)
 		if (ft_num(args[i]) == 0 || ft_double(args, num, i + 1) == 0
 			|| num < -2147483648 || num > 2147483648)
 		{
-			if (argc == 2)
-				free(args);
 			ft_error("Error");
 		}
 		i++;
 	}
+	if (argc == 2)
+		ft_free(args);
+}
+
+void	ft_free(char **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
+	free(args);
 }

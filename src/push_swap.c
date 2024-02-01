@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:50:01 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/26 16:23:47 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:41:51 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_stack(t_list **stack_a, int argc, char **argv)
 	}
 	init_index(stack_a);
 	if (argc == 2)
-		free(args);
+		ft_free(args);
 }
 
 static void	ft_tri(t_list **stack_a, t_list **stack_b)

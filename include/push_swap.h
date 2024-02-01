@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:39:31 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/26 15:15:31 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:43:49 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		rrr(t_list **stack_a, t_list **stack_b);
 
 //check_args
 void	check_args(int argc, char **argv);
+void	ft_free(char **args);
 
 //t_list
 t_list	*ft_lstnew(int value);

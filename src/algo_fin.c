@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_fin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:28:14 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/26 16:22:38 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:29:57 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,6 @@ static void	put_first_index(t_list **stack_a)
 
 void	algo_fin(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*head;
-
-	head = *stack_a;
 	tri_stack_b(stack_b);
 	push_b_to_a(stack_a, stack_b);
 	put_first_index(stack_a);
