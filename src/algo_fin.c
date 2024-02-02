@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_fin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 11:28:14 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/02/01 12:29:57 by nathan           ###   ########.fr       */
+/*   Updated: 2024/02/02 14:25:00 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	tri_stack_b(t_list **stack_b)
 {
 	int	pos;
 
-	pos = get_max_index(stack_b);
+	pos = get_max_index(stack_b, 0);
 	while (pos > 0 && pos < ft_lstsize(*stack_b))
 	{
 		if (pos > (ft_lstsize(*stack_b) / 2))
@@ -44,7 +44,8 @@ static void	push_b_to_a(t_list **stack_a, t_list **stack_b)
 		head_a = *stack_a;
 		head_b = *stack_b;
 		if (i == 0 && (head_a->index == 0
-				|| head_a->index == get_min_index(stack_a, 'i')))
+				|| (head_a->index == get_min_index(stack_a, 'i')
+					&& head_b->index > get_max_index(stack_a, 1))))
 		{
 			pa(stack_a, stack_b);
 			i++;

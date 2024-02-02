@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
+#    By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 14:44:47 by njeanbou          #+#    #+#              #
-#    Updated: 2024/02/01 12:53:53 by nathan           ###   ########.fr        #
+#    Updated: 2024/02/02 14:00:12 by njeanbou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = $(wildcard src/*.c utils/*.c)
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes -fsanitize=address -static-libasan -g
+CFLAGS = -Wall -Wextra -Werror -Iincludes
 
 RM = rm -rf
 

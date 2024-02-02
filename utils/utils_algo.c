@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:53:46 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/26 17:14:25 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/02 14:19:49 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	get_pos_index(t_list **stack, int index)
 	}
 	if (pos == -1)
 	{
-		return (get_max_index(stack));
+		return (get_max_index(stack, 0));
 	}
 	return (pos);
 }
@@ -92,7 +92,7 @@ int	get_index(t_list **stack, int index)
 	return (pos);
 }
 
-int	get_max_index(t_list **stack)
+int	get_max_index(t_list **stack, int ind)
 {
 	t_list	*head;
 	int		index;
@@ -112,5 +112,7 @@ int	get_max_index(t_list **stack)
 		head = head->next;
 		i++;
 	}
+	if (ind == 1)
+		return (index);
 	return (pos);
 }

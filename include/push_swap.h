@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:39:31 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/02/01 12:43:49 by nathan           ###   ########.fr       */
+/*   Updated: 2024/02/02 14:24:40 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int		get_distance(t_list **stack, int index);
 //util_algo
 int		get_pos_index(t_list **stack, int index);
 int		get_index(t_list **stack, int index);
-int		get_max_index(t_list **stack);
+int		get_max_index(t_list **stack, int i);
 int		nb_op(int index, t_list **stack, int op, char c);
 
 //utils_algo_fin

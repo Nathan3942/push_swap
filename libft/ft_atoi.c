@@ -6,7 +6,7 @@
 /*   By: njeanbou <njeanbou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:37:18 by njeanbou          #+#    #+#             */
-/*   Updated: 2024/01/16 11:34:10 by njeanbou         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:45:33 by njeanbou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atoi(const char *str)
 {
 	int					i;
 	int					signe;
-	unsigned long int	result;
+	unsigned long		result;
 
 	i = 0;
 	signe = 1;
@@ -36,5 +36,5 @@ long	ft_atoi(const char *str)
 		result += str[i] - '0';
 		i++;
 	}
-	return (result * signe);
+	return ((long)result * signe);
 }
